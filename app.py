@@ -6,8 +6,8 @@ import pandas as pd
 app = Flask(__name__)
 
 # load the model
-model = joblib.load(open('housing.joblib', 'rb'))
-pipeline = joblib.load(open('pipeline.joblib', 'rb'))
+model = joblib.load(open('joblib/housing.joblib', 'rb'))
+pipeline = joblib.load(open('joblib/pipeline.joblib', 'rb'))
 
 @app.route('/')
 def home():
