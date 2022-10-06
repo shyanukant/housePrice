@@ -11,7 +11,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # check-out repository
       - name: Checkout
         uses: actions/checkout@v2
  ######## MAIN PART #######
@@ -19,11 +18,11 @@ jobs:
           uses: gounit/heroku-docker-deploy@v1.3.3
           with:
             # email address associated with heroku account, Heroku API, app Name
-            email: ${{secrets.HEROKU_EMAIL}}
+            email: ${{ secrets.HEROKU_EMAIL }}
             
-            heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+            heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
 
-            heroku_app_name: ${{secrets.HEROKU_APP_NAME }}
+            heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
 
             # (Optional, default: "./")
             dockerfile_directory: ./
