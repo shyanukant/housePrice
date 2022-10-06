@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ML Projects</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}} " >
+</head>
+
+<body class="bg">
+    <form class="container" action="{{url_for('predict')}}" method="post">
+        
+            <legend>HOUSE PRICE PREDICTION</legend>
+            <div class="input">
+                <label class="label">CRIM</label>
+                <input type="text" name='CRIM' required="required">
+            </div>
+
+            <div class="input">
+                <label class="label">ZN</label>
+                <input type="text" name='ZN' required="required">
+            </div>
+
+            <div class="input">
+                <label class="label">INDUS</label>
+                <input type="text" name='INDUS' required="required">
+            </div>
+
+            <div class="input">
+                <label class="label">CHAS</label>
+                <input type="text" name='CHAS' required="required">
+            </div>
+
+            <div class="input">
+                <label class="label">NOX</label>
+                <input type="text" name='NOX' required="required">
+            </div>
+
+            <div class="input">
+                <label class="label">RM</label>
+                <input type="text" name='RM' required="required">
+            </div>
+
+            <div class="input">
+                <label class="label">AGE</label>
+                <input type="text" name='AGE' required="required">
+            </div>
+
+            <div class="input">
+                <label class="label">DIS</label>
+                <input type="text" name='DIS' required="required">
+            </div>
+
+            <div class="input">
+                <label class="label">RAD</label>
+                <input type="text" name='RAD' required="required">
+            </div>
+
+            <div class="input">
+                <label class="label">TAX</label>
+                <input type="text" name='TAX' required="required">
+            </div>
+
+            <div class="input">
+                <label class="label">PTRAT</label>
+                <input type="text" name='PTRAT' required="required">
+            </div>
+
+            <div class="input">
+                <label class="label">B</label>
+                <input type="text" name='B' required="required">
+            </div>
+
+            <div class="input">
+                <label class="label">LSTAT</label>
+                <input type="text" name='LSTAT' required="required">
+            </div>
+        <br>
+        <button type="submit">Predict</button>
+        
+    </form>
+    <p id="output">{{prediction}}</p>
+
+    
+
+</body>
+
+</html>
