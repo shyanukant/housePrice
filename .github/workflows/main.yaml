@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v2
  ######## MAIN PART #######
         - name: Build, Push and and Release a Docker container to Heroku
-          uses: gounit/heroku-docker-deploy@v1.3.3
+          uses: gonuit/heroku-docker-deploy@v1.3.3
           with:
             # email address associated with heroku account, Heroku API, app Name
             email: ${{ secrets.HEROKU_EMAIL }}
