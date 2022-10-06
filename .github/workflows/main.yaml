@@ -1,0 +1,35 @@
+# workfow name
+name: Heroku Deployment
+
+# Run workflow on every push to main branch
+on:
+  push:
+    branches: [main]
+
+# workflows jobs
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # check-out repository
+      - name: Checkout
+        uses: actions/checkout@v2
+ ######## MAIN PART #######
+        - name: Build, Push and and Release a Docker container to Heroku
+          uses: gounit/heroku-docker-deploy@v1.3.3
+          with:
+            # email address associated with heroku account, Heroku API, app Name
+            email: ${{secrets.HEROKU_EMAIL}}
+            
+            heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+
+            heroku_app_name: ${{secrets.HEROKU_APP_NAME }}
+
+            # (Optional, default: "./")
+            dockerfile_directory: ./
+            # dockerfile name default : "Dockerfile"
+            dockerfile_name: Dockerfile
+            # additonal options of docker build command
+            docker_options: "--no-cache"
+            # default: "web"
+            process_type: web
